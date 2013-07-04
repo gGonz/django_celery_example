@@ -18,4 +18,3 @@ bash "Installing packages from requirements.txt with pip..." do
     sudo pip install -r /home/vagrant/django_site/requirements.txt
     EOH
 end
-
