@@ -1,0 +1,8 @@
+gunicorn
+psycopg2
+Werkzeug
+django==1.5.1
+django-celery
+django-debug-toolbar
+django-extensions
+redis

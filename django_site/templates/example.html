@@ -1,0 +1,79 @@
+{% load i18n %}
+<html>
+    <head>
+        <title>{% trans 'Django + Celery example' %}</title>
+    </head>
+    <body>
+        <h1>{% trans 'A very basic and useless Celery task example' %}</h1>
+        <p>{% trans 'In this example we call an asynchronous task on the server that counts to the provided number and sleeps for 1 second in every iteration.' %}</p>
+        <p>{% trans 'Using AJAX we will create an asynchronous task on the client that will check the status of the task in the server in intervals of 500ms until it is completed.' %}</p>
+        <form class="ajax_form" method="post">
+            {% csrf_token %}
+            <label>{% trans 'Count to' %}</label>
+            <input type="number" name="count_to">
+            <input type="submit" value="{% trans 'Submit' %}">
+        </form>
+        <div class="ajax_div" style="border: 1px solid #CCC; padding: 4px 12px;">
+            <p>{% trans 'This text will change when the AJAX process starts...' %}</p>
+        </div>
+    </body>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".ajax_form").submit(function(e){
+                e.preventDefault();
+
+                /* *** The AJAX configuration to make a POST request to Django *** */
+                $.ajaxSetup({
+                    beforeSend: function(xhr, settings){
+                        function getCookie(name){
+                            var cookieValue = null;
+                            if (document.cookie && document.cookie != ''){
+                                var cookies = document.cookie.split(';');
+                                for (var i = 0; i < cookies.length; i++){
+                                    var cookie = jQuery.trim(cookies[i]);
+                                    // Does this cookie string begin with the name we want?
+                                    if(cookie.substring(0, name.length + 1) == (name + '=')){
+                                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                                    break;
+                                    }
+                                }
+                            }
+                            return cookieValue;
+                        }
+                        if (!(/^http:.*/.test(settings.url) || /^https:.*/.test(settings.url))){
+                            // Only send the token to relative URLs i.e. locally.
+                            xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+                        }
+                    }
+                });
+
+                /* *** The AJAX that will check the task status *** */
+                $form = $(this);
+                $.ajax({
+                    method: "POST",
+                    url: "{% url 'example' %}",
+                    data: $form.serialize(),
+                    dataType: "json",
+                    success: function(data){
+                        $(".ajax_div").html($("<p>").text(JSON.stringify(data)));
+                        window.interval = setInterval(function(){
+                            $.ajax({
+                                method: "GET",
+                                url: data.task_url,
+                                cache: false,
+                                success: function(r){
+                                    $(".ajax_div").append($("<p>").text(JSON.stringify(r)));
+                                    if(r.task.status == "SUCCESS")
+                                        window.interval = clearInterval(window.interval);
+                                },
+                            });
+                        }, 500);
+
+                    },
+                })
+
+            });
+        });
+    </script>
+</html>

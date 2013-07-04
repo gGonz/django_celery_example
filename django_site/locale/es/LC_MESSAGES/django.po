@@ -1,0 +1,52 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-07-04 17:58+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: templates/example.html:4
+msgid "Django + Celery example"
+msgstr "Ejemplo de Django + Celery"
+
+#: templates/example.html:7
+msgid "A very basic and useless Celery task example"
+msgstr "Un ejemplo básico e inútil de Celery"
+
+#: templates/example.html:8
+msgid ""
+"In this example we call an asynchronous task on the server that counts to "
+"the provided number and sleeps for 1 second in every iteration."
+msgstr "En este ejemplo llamaremos a una tarea asíncrona en el servidor que cuenta hasta el número proporcionado y duerme durante un segundo en cada iteración."
+
+#: templates/example.html:9
+msgid ""
+"Using AJAX we will create an asynchronous task on the client that will check "
+"the status of the task in the server in intervals of 500ms until it is "
+"completed."
+msgstr "Usando AJAX crearemos una tarea asíncrona en el cliente que revisará el estado de la tarea en el servidor en intervalos de 500ms hasta que esta sea completada."
+
+#: templates/example.html:12
+msgid "Count to"
+msgstr "Contar hasta"
+
+#: templates/example.html:14
+msgid "Submit"
+msgstr "Enviar"
+
+#: templates/example.html:17
+msgid "This text will change when the AJAX process starts..."
+msgstr "Este texto cambiará cuando el comience el proceso AJAX..."
