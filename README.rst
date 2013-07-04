@@ -39,14 +39,20 @@ Configuring your virtual environment
 
     $ fab vagrant bootstrap
 
-4. Run the virtual server.
+4. Run Celery on the virtual machine.
+
+.. code-block:: bash
+
+    $ vagrant ssh                               # ssh into the virtual machine
+    $ cd django_site                            # cd into the site directory
+    $ nohup python manage.py celery worker &    # run Celery in the background
+    $ exit                                      # close the ssh session
+    
+
+5. Run the virtual server.
 
 .. code-block:: bash
 
     $ fab vagrant runserver
 
-5. Open your browser and go to your virtual server.
-
-.. code-block::
-
-    http://127.0.0.1:8000
+6. Open your browser and go to your virtual server on ``http://127.0.0.1:8000``
