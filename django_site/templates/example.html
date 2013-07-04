@@ -62,9 +62,9 @@
                                 method: "GET",
                                 url: data.task.url,
                                 cache: false,
-                                success: function(r){
-                                    $(".ajax_div").append($("<p>").text(JSON.stringify(r)));
-                                    if(r.task.status == "SUCCESS")
+                                success: function(response){
+                                    $(".ajax_div").append($("<p>").text(JSON.stringify(response)));
+                                    if(response.task.status == "SUCCESS" || response.task.status == "FAILURE")
                                         window.interval = clearInterval(window.interval);
                                 },
                             });
