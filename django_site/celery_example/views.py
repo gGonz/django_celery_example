@@ -20,7 +20,8 @@ class ExampleView(TemplateView):
         # Returns a custom JSON object that only contains the url where we
         # can check the status of the task.
         return HttpResponse(json.dumps({
-            'task_url': reverse('status', kwargs={
-                'task_id': task.task_id}
-            )
+            'task': {
+                'url': reverse('status',
+                    kwargs={'task_id': task.task_id})
+            }
         }))

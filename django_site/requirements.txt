@@ -1,6 +1,7 @@
 gunicorn
 psycopg2
 Werkzeug
+billiard==2.7.3.28
 django==1.5.1
 django-celery
 django-debug-toolbar

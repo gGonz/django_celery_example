@@ -60,7 +60,7 @@
                         window.interval = setInterval(function(){
                             $.ajax({
                                 method: "GET",
-                                url: data.task_url,
+                                url: data.task.url,
                                 cache: false,
                                 success: function(r){
                                     $(".ajax_div").append($("<p>").text(JSON.stringify(r)));

@@ -1,0 +1,161 @@
+/usr/local/lib/python2.7/dist-packages/djcelery/loaders.py:133: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+
+[2013-07-04 15:32:40,216: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/djcelery/loaders.py:133: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+
+[2013-07-04 15:32:40,217: WARNING/MainProcess] celery@precise32 ready.
+
+celeryd: Hitting Ctrl+C again will terminate all running tasks!
+
+celeryd: Warm shutdown (MainProcess)
+ 
+ -------------- celery@precise32 v3.0.20 (Chiastic Slide)
+---- **** ----- 
+--- * ***  * -- Linux-3.2.0-23-generic-pae-i686-with-Ubuntu-12.04-precise
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> broker:      redis://localhost:6379/0
+- ** ---------- .> app:         default:0xa1e036c (djcelery.loaders.DjangoLoader)
+- ** ---------- .> concurrency: 1 (processes)
+- *** --- * --- .> events:      OFF (enable -E to monitor this worker)
+-- ******* ---- 
+--- ***** ----- [queues]
+ -------------- .> celery:      exchange:celery(direct) binding:celery
+                
+
+/usr/local/lib/python2.7/dist-packages/djcelery/loaders.py:133: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+
+[2013-07-04 15:32:50,675: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/djcelery/loaders.py:133: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+
+[2013-07-04 15:32:50,676: WARNING/MainProcess] celery@precise32 ready.
+/usr/local/lib/python2.7/dist-packages/djcelery/loaders.py:133: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+
+[2013-07-04 16:03:44,948: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/djcelery/loaders.py:133: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+
+[2013-07-04 16:03:44,964: WARNING/MainProcess] celery@precise32 ready.
+/usr/local/lib/python2.7/dist-packages/celery/task/trace.py:341: RuntimeWarning: Exception raised outside body: OperationalError('FATAL:  role "vagrant" does not exist\n',):
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/celery/task/trace.py", line 229, in trace_task
+    'hostname': hostname}, STARTED)
+  File "/usr/local/lib/python2.7/dist-packages/celery/backends/base.py", line 282, in store_result
+    self._store_result(task_id, result, status, traceback, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/djcelery/backends/database.py", line 28, in _store_result
+    traceback=traceback, children=self.current_task_children(),
+  File "/usr/local/lib/python2.7/dist-packages/djcelery/managers.py", line 41, in _inner
+    return fun(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/djcelery/managers.py", line 183, in store_result
+    'meta': {'children': children}})
+  File "/usr/local/lib/python2.7/dist-packages/djcelery/managers.py", line 83, in update_or_create
+    return self.get_query_set().update_or_create(**kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/djcelery/managers.py", line 67, in update_or_create
+    obj, created = self.get_or_create(**kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 470, in get_or_create
+    return self.get(**lookup), False
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 382, in get
+    num = len(clone)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 90, in __len__
+    self._result_cache = list(self.iterator())
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 301, in iterator
+    for row in compiler.results_iter():
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/compiler.py", line 775, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/compiler.py", line 839, in execute_sql
+    cursor = self.connection.cursor()
+  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/__init__.py", line 324, in cursor
+    cursor = self.make_debug_cursor(self._cursor())
+  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/postgresql_psycopg2/base.py", line 182, in _cursor
+    self.connection = Database.connect(**conn_params)
+  File "/usr/lib/python2.7/dist-packages/psycopg2/__init__.py", line 179, in connect
+    connection_factory=connection_factory, async=async)
+OperationalError: FATAL:  role "vagrant" does not exist
+
+
+  exc, exc_info.traceback)))
+
+[2013-07-04 16:04:05,154: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/celery/task/trace.py:341: RuntimeWarning: Exception raised outside body: OperationalError('FATAL:  role "vagrant" does not exist\n',):
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/celery/task/trace.py", line 229, in trace_task
+    'hostname': hostname}, STARTED)
+  File "/usr/local/lib/python2.7/dist-packages/celery/backends/base.py", line 282, in store_result
+    self._store_result(task_id, result, status, traceback, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/djcelery/backends/database.py", line 28, in _store_result
+    traceback=traceback, children=self.current_task_children(),
+  File "/usr/local/lib/python2.7/dist-packages/djcelery/managers.py", line 41, in _inner
+    return fun(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/djcelery/managers.py", line 183, in store_result
+    'meta': {'children': children}})
+  File "/usr/local/lib/python2.7/dist-packages/djcelery/managers.py", line 83, in update_or_create
+    return self.get_query_set().update_or_create(**kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/djcelery/managers.py", line 67, in update_or_create
+    obj, created = self.get_or_create(**kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 470, in get_or_create
+    return self.get(**lookup), False
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 382, in get
+    num = len(clone)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 90, in __len__
+    self._result_cache = list(self.iterator())
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 301, in iterator
+    for row in compiler.results_iter():
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/compiler.py", line 775, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/compiler.py", line 839, in execute_sql
+    cursor = self.connection.cursor()
+  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/__init__.py", line 324, in cursor
+    cursor = self.make_debug_cursor(self._cursor())
+  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/postgresql_psycopg2/base.py", line 182, in _cursor
+    self.connection = Database.connect(**conn_params)
+  File "/usr/lib/python2.7/dist-packages/psycopg2/__init__.py", line 179, in connect
+    connection_factory=connection_factory, async=async)
+OperationalError: FATAL:  role "vagrant" does not exist
+
+
+  exc, exc_info.traceback)))
+
+[2013-07-04 16:04:05,438: CRITICAL/MainProcess] Task celery_example.tasks.count_to_number_sleeping[6af4e30b-84dc-4f61-bdaa-7919253e42ea] INTERNAL ERROR: OperationalError('FATAL:  role "vagrant" does not exist\n',)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/celery/task/trace.py", line 229, in trace_task
+    'hostname': hostname}, STARTED)
+  File "/usr/local/lib/python2.7/dist-packages/celery/backends/base.py", line 282, in store_result
+    self._store_result(task_id, result, status, traceback, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/djcelery/backends/database.py", line 28, in _store_result
+    traceback=traceback, children=self.current_task_children(),
+  File "/usr/local/lib/python2.7/dist-packages/djcelery/managers.py", line 41, in _inner
+    return fun(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/djcelery/managers.py", line 183, in store_result
+    'meta': {'children': children}})
+  File "/usr/local/lib/python2.7/dist-packages/djcelery/managers.py", line 83, in update_or_create
+    return self.get_query_set().update_or_create(**kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/djcelery/managers.py", line 67, in update_or_create
+    obj, created = self.get_or_create(**kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 470, in get_or_create
+    return self.get(**lookup), False
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 382, in get
+    num = len(clone)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 90, in __len__
+    self._result_cache = list(self.iterator())
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 301, in iterator
+    for row in compiler.results_iter():
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/compiler.py", line 775, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/compiler.py", line 839, in execute_sql
+    cursor = self.connection.cursor()
+  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/__init__.py", line 324, in cursor
+    cursor = self.make_debug_cursor(self._cursor())
+  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/postgresql_psycopg2/base.py", line 182, in _cursor
+    self.connection = Database.connect(**conn_params)
+  File "/usr/lib/python2.7/dist-packages/psycopg2/__init__.py", line 179, in connect
+    connection_factory=connection_factory, async=async)
+OperationalError: FATAL:  role "vagrant" does not exist
+
+/usr/local/lib/python2.7/dist-packages/djcelery/loaders.py:133: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+
+[2013-07-04 16:04:39,517: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/djcelery/loaders.py:133: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+
+[2013-07-04 16:04:39,519: WARNING/MainProcess] celery@precise32 ready.
