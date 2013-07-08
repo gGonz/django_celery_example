@@ -71,6 +71,4 @@ Configuring your virtual environment
 Celery official documentation
 -----------------------------
 
-`http://docs.celeryproject.org/en/latest/index.html`_
-
-.. _`http://docs.celeryproject.org/en/latest/index.html`: http://docs.celeryproject.org/en/latest/index.html
+``http://docs.celeryproject.org/en/latest/index.html``
