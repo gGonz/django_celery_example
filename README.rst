@@ -3,10 +3,20 @@ Django + Celery example
 
 This is a very basic and useless example of Celery extending Django with asynchronous tasks, it consist of a simple task that counts to the provided number and sleeps one second in every iteration, using AJAX to check the status of this task from the client side.
 
+This example makes use of a virtual machine that runs the Django_ server and the Redis_ backend for Celery_.
+
+.. _Django: https://www.djangoproject.com/
+
+.. _Redis: http://redis.io/
+
+.. _Celery: http://www.celeryproject.org/
+
 Prerequisites
 -------------
 
-A development environment that runs `Oracle's VirtualBox`_, Vagrant_, Python_ and Fabric_.
+A development environment that runs Git_, `Oracle's VirtualBox`_, Vagrant_, Python_ and Fabric_.
+
+.. _Git: http://git-scm.com/
 
 .. _Oracle's VirtualBox: https://www.virtualbox.org/
 
@@ -56,3 +66,11 @@ Configuring your virtual environment
     $ fab vagrant runserver
 
 6. Open your browser and go to your virtual server on ``http://127.0.0.1:8000``
+
+
+Celery official documentation
+-----------------------------
+
+`http://docs.celeryproject.org/en/latest/index.html`_
+
+.. _`http://docs.celeryproject.org/en/latest/index.html`: http://docs.celeryproject.org/en/latest/index.html
